@@ -149,7 +149,7 @@ input:valid ~ .user-label {
 /* =============================== PROMO =============================== */
 
 .promo {
-  background-image: url("../asset/img/Taieri.png");
+  background-image: url("/public/storage/img/Taieri.png");
   background-repeat: no-repeat;
   width: 85%;
   background-color: var(--hover);
