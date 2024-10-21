@@ -3,6 +3,12 @@
       <div
           class="login-card border border-3 col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3 p-4 p-sm-5 shadow-lg rounded rounded-4 bg-light">
           <h1 class="fw-bold text-success text-center py-3 display-4">Login</h1>
+          @if(session()->has('gagal') || session()->has('sukses'))
+          <div class="alert alert-danger text-center" role="alert">
+            {{ session()->get('gagal') ? session()->get('gagal') : session()->get('sukses') }}
+          </div>
+          @endif
+
           <form action="{{ route('login.store') }}" method="POST">
               @csrf
               <div class="d-flex flex-column my-3">

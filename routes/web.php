@@ -38,4 +38,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function (){
     Route::get('/form-tiga', [DashboardController::class, 'formTiga'])->name('form.tiga');
     Route::post('/form-tiga', [DashboardController::class, 'formTigaStore'])->name('form.tiga.store');
 
+    Route::get('/detail/{kode}', [DashboardController::class, 'lihatDetail'])->name('detail.barang');
+    Route::get('/update-gambar/{kode}', [DashboardController::class, 'updateGambar'])->name('update.tb.gambar');
+    Route::post('/update-gambar{kode}', [DashboardController::class, 'storeUpdateGambar'])->name('store.update.tb.gambar');
+    Route::delete('/hapus-barang/{kode}', [DashboardController::class, 'hapusBarang'])->name('hapus.barang');
+    Route::get('/update-rating/{kode}', [DashboardController::class, 'updateRating'])->name('update.rating');
+    Route::post('/update-rating/{kode}', [DashboardController::class, 'storeUpdateRating'])->name('store.update.rating');
 });

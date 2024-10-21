@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kode_gambar')->primary()->autoIncrement();
             $table->string('kode_barang')->nullable();
             $table->string('varian');
-            $table->string('url_gambar')->unique();
+            $table->string('url_gambar', 512)->unique();
             $table->integer('harga');
             $table->integer('stok');
             $table->timestamps();

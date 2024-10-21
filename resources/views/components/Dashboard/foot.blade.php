@@ -6,10 +6,6 @@
     $('#tabelData').DataTable();
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    exampleModal.show();
-  });
 </script>
 </body>
 </html>

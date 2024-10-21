@@ -26,6 +26,6 @@ class RegisterController extends Controller
         ]);
 
         User::create($validasi);
-        return redirect()->route('home');
+        return redirect()->route('login')->with('sukses', 'Sukses Mendaftar, Silahkan Login');
     }
 }

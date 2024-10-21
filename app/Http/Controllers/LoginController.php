@@ -25,7 +25,7 @@ class LoginController extends Controller
 
 
         if(Auth::attempt($cekData)){
-            return redirect()->route('home')->with('sukses', 'Login Sukses, Terimakasih');
+            return redirect()->route('dashboard')->with('sukses', 'Login Sukses, Terimakasih');
         } else {
             return redirect()->route('login')->with('gagal', 'Email Atau Password Salah, Silahkan Coba Lagi');
         }

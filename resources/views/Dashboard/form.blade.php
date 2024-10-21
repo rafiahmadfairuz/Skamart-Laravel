@@ -1,9 +1,18 @@
 <x-Dashboard.head></x-Dashboard.head>
 <x-Dashboard.navbar></x-Dashboard.navbar>
-<form action="{{ route('form.utama.store') }}" method="POST">
+
+<div class="container mt-4">
+    @if(session()->has('eror'))
+    <div class="alert alert-danger" role="alert">
+        {{ session()->get('eror') }}
+      </div>
+    @endif
+</div>
+<form action="{{ route('form.utama.store') }}" method="POST" class="container my-2">
+    @csrf
     <div class="mb-3">
         <label for="kode" class="form-label fw-bold">Kode Barang</label>
-        <input type="text" class="form-control border-success" id="kode" name="kode" >
+        <input type="text" class="form-control border-success" id="kode" name="kode" value="{{ old('kode') }}" >
         @error('kode')
         <span class="text-danger my-1 text-nowrap">
             <i class="bi bi-exclamation-triangle me-2"></i>
@@ -15,7 +24,7 @@
     <div class="mb-3">
         <label for="kategori" class="form-label fw-bold">Nama Kategori</label>
         <select class="form-select border-success" name="kategori" id="kategori" >
-            <option selected>Nama Kategori</option>
+            <option selected disabled>Nama Kategori</option>
             <option value="Jajanan">Jajanan</option>
             <option value="Minuman">Minuman</option>
             <option value="Bumbu">Bumbu</option>
@@ -33,7 +42,7 @@
 
     <div class="mb-3">
         <label for="nama" class="form-label fw-bold">Nama Barang</label>
-        <input type="text" class="form-control border-success" name="nama" id="nama" >
+        <input type="text" class="form-control border-success" value="{{ old('nama') }}" name="nama" id="nama" >
         @error('nama')
         <span class="text-danger my-1 text-nowrap">
             <i class="bi bi-exclamation-triangle me-2"></i>
@@ -44,7 +53,7 @@
 
     <div class="mb-3">
         <label for="deskripsi" class="form-label fw-bold">Deskripsi</label>
-        <textarea style="max-height: 100px;" name="deskripsi" type="text" class="form-control border-success"
+        <textarea style="max-height: 100px;" name="deskripsi" value="{{ old('deskripsi') }}" type="text" class="form-control border-success"
             id="deskripsi" ></textarea>
             @error('deskripsi')
         <span class="text-danger my-1 text-nowrap">
@@ -74,7 +83,7 @@
 
     <div class="mb-3">
         <label for="diskon" class="form-label fw-bold">Diskon</label>
-        <input type="number" name="diskon" class="form-control border-success" id="diskon" >
+        <input type="number" name="diskon" value="{{ old('diskon') }}" class="form-control border-success" id="diskon" >
         @error('diskon')
         <span class="text-danger my-1 text-nowrap">
             <i class="bi bi-exclamation-triangle me-2"></i>

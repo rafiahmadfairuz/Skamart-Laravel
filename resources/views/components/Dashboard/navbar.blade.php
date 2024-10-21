@@ -32,12 +32,18 @@
         <i class="bi bi-person-circle fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
         <ul class="dropdown-menu dropdown-menu-light border shadow-sm">
             <li><span class="dropdown-item d-flex align-items-center column-gap-2"><i
-                        class="bi bi-person-circle"></i><span class="text-nowrap">Rafi</li>
+                        class="bi bi-person-circle"></i><span class="text-nowrap">{{ auth()->user()->username }}</li>
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item d-flex align-items-center" href="../LoginRegister/logout.php"><i
-                        class="bi bi-box-arrow-in-left mx-2"></i> Sign Out</a></li>
+            <li>
+                <form action="{{ route('logout') }}">
+                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                        <i class="bi bi-box-arrow-in-left mx-2"></i> Sign Out
+                    </button>
+                </form>
+
+            </li>
         </ul>
     </div>
 </nav>

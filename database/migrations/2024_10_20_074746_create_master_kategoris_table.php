@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('master_kategoris', function (Blueprint $table) {
             $table->unsignedBigInteger('kode_kategori')->primary()->autoIncrement();
             $table->string('nama_kategori');
-            $table->string('url_gambar')->nullable();
+            $table->string('url_gambar', 512)->nullable();
             $table->timestamps();
         });
     }

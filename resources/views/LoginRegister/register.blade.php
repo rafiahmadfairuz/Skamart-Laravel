@@ -1,4 +1,4 @@
-<x-head></x-head>
+<x-Customer.head></x-Customer.head>
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center LogReg">
     <div
         class="login-card border border-3 col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3 p-4 p-sm-5 shadow-lg rounded rounded-4 bg-light">
@@ -58,4 +58,4 @@
         <p class="text-center">Sudah Punya akun? <a href="{{ route('login') }}">Login Sekarang!</a></p>
     </div>
 </div>
-<x-foot></x-foot>
+<x-Customer.foot></x-Customer.foot>
